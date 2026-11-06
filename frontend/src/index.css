@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #005fcc;
+  --color-primary-dark: #004aa3;
+  --color-primary-soft: #e6f0fb;
+  --color-texto: #1a1a1a;
+  --color-surface: #ffffff;
+  --color-fundo: #f5f7fa;
+  --color-borda: #d0d7de;
+
+  --color-cat-verbo: #278442;
+  --color-cat-substantivo: #b85b09;
+  --color-cat-pessoa: #ffd23f;
+  --color-cat-adjetivo: #2c73d5;
+  --color-cat-social: #e85aa0;
+  --color-cat-adverbio: #8b5e3c;
+  --color-cat-diversos: #ffffff;
+
+  --color-discreto: #59626e;
+
+  --color-acerto: #1f7a3d;
+  --color-acerto-soft: #e8f5ec;
+  --color-erro: #c02626;
+  --color-erro-soft: #fdecec;
+  --color-aviso: #8a5300;
+  --color-aviso-soft: #fff4e0;
+
+  --spacing-alvo: 48px;
+  --spacing-acao: 64px;
+  --spacing-card-pictograma: 96px;
+  --spacing-item-nav: 56px;
+  --spacing-alternativa: 120px;
+  --spacing-sidebar-aberta: 260px;
+  --spacing-sidebar-fechada: 84px;
+
+  --font-sans: "Atkinson Hyperlegible", Inter, system-ui, sans-serif;
+  --text-rotulo: 18px;
+  --text-entrada: 28px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-fundo);
+    color: var(--color-texto);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  button {
+    min-width: var(--spacing-alvo);
+    min-height: var(--spacing-alvo);
+    cursor: pointer;
+    font-family: inherit;
+  }
+}

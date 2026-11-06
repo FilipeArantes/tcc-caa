@@ -1,0 +1,29 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8081:8000"
+    volumes:
+      - .:/var/www/html
+      - ./docker/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini:ro
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: caa_db
+      POSTGRES_USER: caa_user
+      POSTGRES_PASSWORD: caa_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - dados_postgres:/var/lib/postgresql/data
+
+volumes:
+  dados_postgres:
+
+networks:
+  default:
+    driver_opts:
+      com.docker.network.driver.mtu: "1280"
